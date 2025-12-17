@@ -1,10 +1,12 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Prime numbers between 0 and 1000:");
-        for (int i = 0; i <= 1000; i++) {
-            if (AlgoProgram.isPrime(i)) {
-                System.out.print(i + " ");
-            }
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n (so that range is 0 to 2^n - 1): ");
+        int n = sc.nextInt();
+        int N = (int) Math.pow(2, n);
+        System.out.println("Think of a number between 0 and " + (N - 1));
+        AlgoProgram.findNumber(0, N - 1, sc);
+        sc.close();
     }
 }
