@@ -4,12 +4,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter words (comma separated): ");
         String[] words = sc.nextLine().split(",");
-        System.out.print("Enter word to search: ");
-        String key = sc.nextLine();
-        if (AlgoProgram.search(words, key))
-            System.out.println("Word FOUND");
-        else
-            System.out.println("Word NOT FOUND");
+        AlgoProgram.mergeSort(words);
+        for (String w : words)
+            System.out.print(w + " ");
         sc.close();
     }
 }
