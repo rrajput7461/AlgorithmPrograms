@@ -1,17 +1,13 @@
-import java.util.Arrays;
 public class AlgoProgram {
-    public static boolean search(String[] words, String key) {
-        Arrays.sort(words);
-        int low = 0, high = words.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (words[mid].equalsIgnoreCase(key))
-                return true;
-            else if (words[mid].compareToIgnoreCase(key) < 0)
-                low = mid + 1;
-            else
-                high = mid - 1;
+    public static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
-        return false;
     }
 }
